@@ -46,4 +46,4 @@ This script will now run at 0 minutes past 2, every day of the month, every mont
 
 
 # Windows People!
-Don't dispair windows people, I use windows too! In windows there's something else called the "Task Scheduler" or schtasks sometimes, it has the same function as cron I believe. I'm not going to cover it here in depth here, this post has already dragged on long enough, but feel free to have a look at microsoft's documentation about it [here](https://docs.microsoft.com/en-us/windows/win32/taskschd/schtasks).
+Don't dispair Windows people, I use Windows too! In windows there's something else called the "Task Scheduler" or schtasks sometimes, it has the same function as cron I believe. I'm not going to cover it here in depth here, this post has already dragged on long enough, but feel free to have a look at Microsoft's documentation about it [here](https://docs.microsoft.com/en-us/windows/win32/taskschd/schtasks).
