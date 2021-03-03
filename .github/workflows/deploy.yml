@@ -1,4 +1,4 @@
-name: Testing the GitHub Pages publication
+name: Build Blog & Push to S3
 
 on:
   push:
