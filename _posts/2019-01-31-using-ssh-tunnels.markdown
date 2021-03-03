@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Port forwarding with SSH"
-subtitle: "AKA how to access your own media server at work or university"
+subtitle: "aka, how to access your own media server at work or university"
 date:  2019-01-31 11:34:01
 categories: [tutorials]
 ---

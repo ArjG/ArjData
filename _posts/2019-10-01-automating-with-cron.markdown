@@ -12,14 +12,14 @@ The solution for automating repetitive tasks that I think a lot of people, mysel
 Cron! I can't believe I haven't heared about cron sooner. I've been using Linux systems as part of my University Course for over 3 years now and I've had to buy my own server and run into my own real world problems before I even knew it existed! So, hopefully there's at least one other hobbyist out there who could benefit from this!
 
 ## But What is cron?
-Cron is a daemon that will execute commands based on a schedule, each user can have their own file that contains their specific scedules and commands for cron to run and these specific files are called crontabs. 
+Cron is a daemon that will execute commands based on a schedule, each user can have their own file that contains their specific scedules and commands for cron to run and these specific files are called crontabs.
 
 ## How does it work?
 Almost all Linux distros come with cron by default and it's likely already running commands for you without you knowing it, if you don't have cron installed then you're probably a more advanced user of Linux and probably should be getting your advice elsewhere, if you're on windows, don't worry I've got a little bit at the end for you.
 
 Okay so you shouldn't need to install cron but you still need to know how to make crontabs, they look a little bit confusing to begin with, but we'll get through it.
 
-So to begin with you need to edit your crontabs, to do this simply run the command crontabs with the -e flag, as we want to edit ours. 
+So to begin with you need to edit your crontabs, to do this simply run the command crontabs with the -e flag, as we want to edit ours.
 
 So let's say we run `crontab -e` and add the line `* * * * * cmd` to the text file, what exactly have we done here?
 
