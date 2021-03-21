@@ -5,7 +5,7 @@ description: >
   to my uninformed opinions that are just slightly more structured than twitter rants.
 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://amrik.de/" # the base hostname & protocol for your site
+url: "https://amrik.de" # the base hostname & protocol for your site
 
 author:
   fullname: Amrik Singh
