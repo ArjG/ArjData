@@ -34,7 +34,12 @@ jobs:
       run: |
         aws s3 sync ./_site/ s3://amrik.de --delete
 
-    # invalidate website cache, relies on crednetials above.
-    - name: Invalidate cloudfront cache
-      run: |
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.AMRIK_DE_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+    # Invalidate Cloudfront (this action)
+    - name: invalidate
+      uses: chetan/invalidate-cloudfront-action@master
+      env:
+        DISTRIBUTION: ${{ secrets.AMRIK_DE_CLOUDFRONT_DISTRIBUTION_ID }}
+        PATHS: '*'
+        AWS_REGION: 'eu-west-2'
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
