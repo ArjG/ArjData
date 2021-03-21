@@ -3,14 +3,14 @@ name: Build Blog & Push to S3
 on:
   push:
     branches: [main]
-    
+
 jobs:
   jekyll:
     runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@v2
 
-    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    # Uses GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v1
       with:
         path: vendor/bundle
@@ -18,10 +18,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-
 
-    # Standard usage
+    # Build website with jekyll
     - uses:  lemonarc/jekyll-action@1.0.0
-    
-    # Example deployment: Push to S3
+
+    # Set up environment variables for aws
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -29,6 +29,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-2
 
-    - name: Sync output to S3
+    # sync website to s3 bucket, relies on crednetials above.
+    - name: Sync jekyll output to S3 bucket
       run: |
         aws s3 sync ./_site/ s3://amrik.de --delete
