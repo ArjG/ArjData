@@ -22,7 +22,7 @@ In the rest of this post, I'll try to explain how the website works, how I make 
 
 ![Amrik.DE](https://amrik.de/assets/posts/amrik-dot-de/Architecture.png)
 
-Amrik.de is a pretty simple website, there is no backend needed as all I need to do is show some text and images on the screen and have it look pretty. That being said, there are various technologies being leveraged under the hood, most of which being hosted provided by AWS.
+Amrik.de is a pretty simple website, there is no backend needed as all I need to do is show some text and images on the screen and have it look pretty. That being said, there are various technologies being leveraged under the hood, most of which being provided by AWS.
 
 The diagram above provides an overview of all the different parts that go into Amrik.de, I'll cover them each in detail below. If you're less interested in the specifics, feel free to skip to the other sections.
 
