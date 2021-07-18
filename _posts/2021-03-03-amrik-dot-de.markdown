@@ -30,7 +30,7 @@ The diagram above provides an overview of all the different parts that go into A
 
 [Route53](https://aws.amazon.com/route53/) is a Domain Name System service.
 
-In the most high level view, all it is doing is helping to translate the domain name "Amrik.de" into an IP addresses. Specifically for this project, when someone types "Amrik.de" into their browser Route53 will point them to a CloudFront distribution.
+In the most high level view, all it is doing is helping to translate the domain name ["Amrik.de"](https://amrik.de/meta/2019/09/10/why-dot-de.html) into an IP addresses. Specifically for this project, when someone types "Amrik.de" into their browser Route53 will point them to a CloudFront distribution.
 
 
 ### CloudFront
