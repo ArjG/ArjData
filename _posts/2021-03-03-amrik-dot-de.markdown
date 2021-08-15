@@ -6,7 +6,7 @@ date: 2021-03-03 17:37:23
 categories: [projects]
 ---
 
-# What is amrik.de
+# What is Amrik.de?
 
 Amrik.de is my space on the internet to share things I think are interesting or useful to others.
 
