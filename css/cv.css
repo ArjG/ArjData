@@ -1,14 +1,14 @@
-@page{
+@page {
   height: 5rem;
   size: letter portrait;
   margin: 0;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --page-width: 8.5in;
   --page-height: 11in;
   --main-width: 6.4in;
@@ -30,11 +30,11 @@
   --main-blocks-title-icon-offset-left: -19pt;
 }
 
-body{
+body {
   width: var(--page-width);
   height: var(--page-height);
   margin: 0;
-  font-family: "Monospace", sans-serif; 
+  font-family: "Monospace", sans-serif;
   font-weight: 300;
   line-height: 1.3;
   color: #444;
@@ -42,28 +42,33 @@ body{
   margin: 0 auto 0;
 }
 
-a, a:hover, a:visited, a:active {
+a,
+a:hover,
+a:visited,
+a:active {
   color: inherit;
   text-decoration: none;
- }
+}
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   margin: 0;
   color: #000;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
-#main{
+#main {
   float: left;
   width: var(--main-width);
   padding: 0.25in 0.25in 0 0.25in;
   font-size: 7pt;
 }
 
-#sidebar{
+#sidebar {
   float: right;
   position: relative; /* for disclaimer */
   width: var(--sidebar-width);
@@ -76,39 +81,41 @@ li{
 /* main */
 
 /** big title **/
-#title, h1, h2{
+#title,
+h1,
+h2 {
   text-transform: uppercase;
 }
 
-#title{
+#title {
   position: relative;
   left: 0.55in;
   margin-bottom: 0.3in;
   line-height: 1.2;
 }
 
-#title h1{
+#title h1 {
   font-weight: 300;
   font-size: 18pt;
   line-height: 1.5;
 }
 
-#title h1 strong{
+#title h1 strong {
   margin: auto 2pt auto 4pt;
   font-weight: 600;
 }
 
-.subtitle{
+.subtitle {
   font-size: 8pt;
 }
 
 /*** categorial blocks ***/
 
-.main-block{
+.main-block {
   margin-top: 0.1in;
 }
 
-#main h2{
+#main h2 {
   position: relative;
   top: var(--row-blocks-padding-top);
   /* XXX: 0.5px for aligning fx printing */
@@ -118,7 +125,7 @@ li{
   color: #555;
 }
 
-#main h2 > i{
+#main h2 > i {
   /* use absolute position to prevent icon's width from misaligning title */
   /* assigning a fixed width here is no better due to needing to align decorator
      line too */
@@ -128,8 +135,8 @@ li{
   color: #444;
 }
 
-
-#main h2::after{ /* extends the decorator line */
+#main h2::after {
+  /* extends the decorator line */
   height: calc(var(--row-blocks-padding-top) * 2);
   position: relative;
   top: calc(-1 * var(--row-blocks-padding-top));
@@ -140,33 +147,32 @@ li{
   z-index: 0;
   line-height: 0;
   font-size: 0;
-  content: ' ';
+  content: " ";
 }
 
 /**** minor tweaks on the icon fonts ****/
-#main h2 > .fa-graduation-cap{
+#main h2 > .fa-graduation-cap {
   left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
 }
 
-#main h2 > .fa-suitcase{
+#main h2 > .fa-suitcase {
 }
 
-#main h2 > .fa-folder-open{
+#main h2 > .fa-folder-open {
 }
-
 
 /**** individual row blocks (date - decorator - details) ****/
 
-.blocks{
+.blocks {
   display: flex;
   flex-flow: row nowrap;
 }
 
-.blocks > div{
+.blocks > div {
   padding-top: var(--row-blocks-padding-top);
 }
 
-.date{
+.date {
   flex: 0 0 var(--date-block-width);
   padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
   padding-right: var(--decorator-horizontal-margin);
@@ -175,20 +181,20 @@ li{
   line-height: 1;
 }
 
-.date span{
+.date span {
   display: block;
 }
 
-.date span:nth-child(2)::before{
+.date span:nth-child(2)::before {
   position: relative;
   top: 1pt;
   right: 5.5pt;
   display: block;
   height: 10pt;
-  content: '|';
+  content: "|";
 }
 
-.decorator{
+.decorator {
   flex: 0 0 0;
   position: relative;
   width: 2pt;
@@ -205,11 +211,11 @@ li{
  *
  */
 
-.decorator::before{
+.decorator::before {
   position: absolute;
   top: var(--decorator-outer-offset-top);
   left: var(--decorator-outer-offset-left);
-  content: ' ';
+  content: " ";
   display: block;
   width: var(--decorator-outer-dim);
   height: var(--decorator-outer-dim);
@@ -217,66 +223,75 @@ li{
   background-color: #fff;
 }
 
-.decorator::after{
+.decorator::after {
   position: absolute;
   top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
-  left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
-  content: ' ';
+  left: calc(
+    var(--decorator-outer-offset-left) + var(--decorator-border-width)
+  );
+  content: " ";
   display: block;
   width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-  height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-  border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
+  height: calc(
+    var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)
+  );
+  border-radius: calc(
+    (var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2
+  );
   background-color: #555;
 }
 
-.blocks:last-child .decorator{ /* slightly shortens it */
+.blocks:last-child .decorator {
+  /* slightly shortens it */
   margin-bottom: 0.25in;
 }
 
 /***** fine-tunes on the details block where the real juice is *****/
 
-.details{
+.details {
   flex: 1 0 0;
   padding-left: var(--decorator-horizontal-margin);
-  padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important; /* not sure why but this is needed for better alignment */
+  padding-top: calc(
+    var(--row-blocks-padding-top) - 0.5pt
+  ) !important; /* not sure why but this is needed for better alignment */
 }
 
-.details header{
+.details header {
   color: #000;
 }
 
-.details h3{
+.details h3 {
   font-size: 9pt;
 }
 
-.main-block:not(.concise) .details div{
-  margin: 0.18in 0 0.1in 0; 
+.main-block:not(.concise) .details div {
+  margin: 0.18in 0 0.1in 0;
 }
 
-.main-block:not(.concise) .blocks:last-child .details div{
+.main-block:not(.concise) .blocks:last-child .details div {
   margin-bottom: 0;
 }
 
-.main-block.concise .details div:not(.concise){
+.main-block.concise .details div:not(.concise) {
   /* use padding to work around the fact that margin doesn't affect floated
      neighboring elements */
   padding: 0.05in 0 0.07in 0;
 }
 
-.details .place{
+.details .place {
   float: left;
   font-size: 7.5pt;
 }
 
-.details .location{
+.details .location {
   float: right;
 }
 
-.details div{
+.details div {
   clear: both;
 }
 
-.details .location::before{
+.details .location::before {
   display: inline-block;
   position: relative;
   right: 3pt;
@@ -285,56 +300,54 @@ li{
   font-weight: normal;
   font-style: normal;
   text-decoration: inherit;
-  content: "\f041";
+  content: "";
 }
 
 /***** fine-tunes on the lists... *****/
 
-#main ul{
+#main ul {
   padding-left: 0.07in;
   margin: 0.08in 0;
 }
 
-#main li{
+#main li {
   margin: 0 0 0.025in 0;
 }
 
 /****** customize list symbol style ******/
-#main li::before{
+#main li::before {
   position: relative;
   margin-left: -4.25pt;
-  content: '• ';
+  content: "• ";
 }
 
-.details .concise ul{
+.details .concise ul {
   margin: 0 !important;
   -webkit-columns: 1;
   -moz-columns: 1;
   columns: 1;
 }
 
-.details .concise li{
+.details .concise li {
   margin: 0 !important;
 }
 
-.details .concise li{
+.details .concise li {
   margin-left: 0 !important;
 }
 
-
-
 /* sidebar */
 
-#sidebar h1{
+#sidebar h1 {
   font-weight: 400;
   font-size: 11pt;
 }
 
-.side-block{
-  margin-top: 0.5in; 
+.side-block {
+  margin-top: 0.5in;
 }
 
-#contact ul{
+#contact ul {
   margin-top: 0.05in;
   padding-left: 0;
   font-family: "Source Code Pro";
@@ -342,32 +355,30 @@ li{
   line-height: 1.75;
 }
 
-#contact li > i{
+#contact li > i {
   width: 9pt; /* for text alignment */
   text-align: right;
 }
 
-#skills{
+#skills {
   line-height: 1.5;
 }
 
-#skills ul{
+#skills ul {
   margin: 0.05in 0 0.15in;
   padding: 0;
 }
 
-#skills li > i{
+#skills li > i {
   width: 9pt;
-  text-align:right;
+  text-align: right;
 }
 
-#skills li span{ 
+#skills li span {
   margin-left: 0.3rem;
 }
 
-
-
-#disclaimer{
+#disclaimer {
   position: absolute;
   bottom: var(--sidebar-horizontal-padding);
   right: var(--sidebar-horizontal-padding);
@@ -378,7 +389,7 @@ li{
   color: #777;
 }
 
-#disclaimer code{
+#disclaimer code {
   color: #666;
   font-family: "Source Code Pro";
   font-weight: 400;
@@ -388,8 +399,8 @@ li{
   font-size: 0.66rem;
 }
 
-.iconify-inline{
-  width:0.75rem;
+.iconify-inline {
+  width: 0.75rem;
 }
 .details span a {
   text-decoration: underline;
@@ -398,4 +409,3 @@ li{
 .work .details .place {
   font-weight: bold;
 }
-
