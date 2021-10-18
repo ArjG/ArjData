@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Amrik.de - a personal blog"
+title: "Amrik.de - a personal blog"
 subtitle: "yep, this very website."
 date: 2021-03-03 17:37:23
-categories: [projects]
+categories: [projects, meta]
 ---
 
 # What is Amrik.de?
@@ -14,7 +14,6 @@ If I stumble upon or [create](https://amrik.de/categories/projects/) something u
 It's not all selfless though, I believe that if I take the time to write about something I'll be forced develop at least a slightly deeper understanding of it too, which is always a good thing.
 
 In the rest of this post, I'll try to explain how the website works, how I make posts, and how everything is set up for me to focus most on writing and least on maintaining the website.
-
 
 # How It Works
 
@@ -32,7 +31,6 @@ The diagram above provides an overview of all the different parts that go into A
 
 In the most high level view, all it is doing is helping to translate the domain name ["Amrik.de"](https://amrik.de/meta/2019/09/10/why-dot-de.html) into an IP addresses. Specifically for this project, when someone types "Amrik.de" into their browser Route53 will point them to a CloudFront distribution.
 
-
 ### CloudFront
 
 [CloudFront](https://aws.amazon.com/cloudfront/) is a "Content Delivery Network". For this website it's main function is to deliver data (HTML, CSS, JS) to users from an S3 bucket.
@@ -41,7 +39,6 @@ Additionally, by using CloudFront's large edge networking locations, the website
 
 CloudFront was also chosen because of some limitations with S3, specifically that as of now S3 doesn't support HTTPS. I'm of the opinion that even when hosting a project such as a blog with nothing at all sensitive, there is still no reason to not use HTTPS. It's completely free to get certificates these days and if _nothing_ else, it definitely makes your website appear more professional and trustworthy, at least in my eyes.
 
-
 ### S3
 
 [S3](https://aws.amazon.com/s3/) is a service provided by AWS that stores objects. After the content of Amrik.de is generated into HTML etc., it is pushed to S3 and from here it can be accessed only from CloudFront.
@@ -49,7 +46,6 @@ CloudFront was also chosen because of some limitations with S3, specifically tha
 ### GitHub
 
 GitHub isn't actually part of the website, but it does play a huge part in how the website is maintained. All of the code for the website is stored in [this repository](https://github.com/AmrikSD/Amrik.de) on GitHub. The history of all changes to the source code of the website, posts, and media are all stored on Git. To automate changes to the website, every time I push to the main branch of this repository I use [Github Actions](https://github.com/features/actions) in order to make sure that the changes are pushed to the live version of the website, without needing to do _anything_ manually.
-
 
 # How I Make Posts
 
@@ -70,7 +66,6 @@ This can change, of course, but as of now the only part of this website that is 
 Of course I'm aware that after I expend any free tiers this cost will rise, but even once this happens this website is _very_ cheap to run all things considered the availability and performance given by CloudFront particularly.
 
 # Do I Recommend this Approach?
-
 
 Yes. After hosting locally for several years, and having to manually deploy posts and deal with any networking changes manually, having all of this work outsourced to GitHub Actions and AWS has meant I am free to enjoy writing more instead of maintaining technologies website.
 
