@@ -31,5 +31,8 @@ jobs:
 
     # sync website to s3 bucket, relies on crednetials above.
     - name: Sync jekyll output to S3 bucket
+      env:
+        DISTRIBUTION_ID: ${{ secrets.AMRIK_DE_CLOUDFRONT_DISTRIBUTION_ID }}
       run: |
         aws s3 sync ./_site/ s3://amrik.de --delete
+        aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
